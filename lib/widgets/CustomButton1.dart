@@ -9,6 +9,8 @@ class CustomButton1 extends StatelessWidget {
   final Color color;
   final Color textColor;
   final VoidCallback onPressed;
+  final double width;
+  final double height;
   final double borderRadius;
   final double padding;
   final Color? borderColor;
@@ -20,6 +22,8 @@ class CustomButton1 extends StatelessWidget {
     required this.color,
     required this.textColor,
     required this.onPressed,
+    required this.width,
+    required this.height,
     this.borderRadius = 8.0,
     this.padding = 16.0,
     this.borderColor,
@@ -37,6 +41,8 @@ class CustomButton1 extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
+        width: width,
+        height: height,
         padding: EdgeInsets.all(padding),
         decoration: BoxDecoration(
           color: color,
@@ -44,10 +50,10 @@ class CustomButton1 extends StatelessWidget {
           border: borderColor != null && borderWidth != null ? Border.all(color: borderColor!, width: borderWidth!) : null,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(width: mediaQuery.screenWidth*0.1,),
-            if (logo != null) ...[Image.asset(logo!, height: 24.0, width: 24.0), SizedBox(width: mediaQuery.screenWidth*0.04)],
+
+            if (logo != null) ...[Image.asset(logo!, height: 24.0, width: 24.0)],
             Text(text, style: AppThemes.bodyLarge(color: textColor),
             ),
           ],
