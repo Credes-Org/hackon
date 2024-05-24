@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hackon/screens/SignIn.dart';
+import 'package:hackon/screens/Signup.dart';
 import 'package:hackon/screens/Welcome.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark
         ),
         routes: {},
-        home: const SignInScreen()
+        home: const SignUpScreen()
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackon/constants/device_mode_constants.dart';
 import 'package:hackon/constants/media_query_constants.dart';
 import 'package:hackon/themes.dart';
 import 'package:hackon/uikit/ui_colors.dart';
@@ -11,9 +12,10 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQueryConstants.of(context);
+    bool darkMode = DeviceMode.isDarkMode();
 
     return Scaffold(
-
+      resizeToAvoidBottomInset : false,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -29,25 +31,27 @@ class SignInScreen extends StatelessWidget {
               height: mediaQuery.screenHeight * 0.05,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: mediaQuery.screenWidth * 0.08),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text("Welcome Back", style: AppThemes.displayLarge(color: UIColor().blackWhite())))
-            ),
+                padding: EdgeInsets.symmetric(
+                    horizontal: mediaQuery.screenWidth * 0.08),
+                child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("Welcome Back",
+                        style: AppThemes.displayLarge(
+                            color: darkMode?UIColor.whiteDefault:UIColor.blackDefault)))),
             SizedBox(
               height: mediaQuery.screenHeight * 0.01,
             ),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: mediaQuery.screenWidth * 0.08),
+                padding: EdgeInsets.symmetric(
+                    horizontal: mediaQuery.screenWidth * 0.08),
                 child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Text("Login to Continue", style: AppThemes.labelLarge(color: UIColor.greenNeutral)))
-            ),
+                    child: Text("Login to Continue",
+                        style: AppThemes.labelLarge(
+                            color: UIColor.greenNeutral)))),
             SizedBox(
               height: mediaQuery.screenHeight * 0.02,
             ),
-
-
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: mediaQuery.screenWidth * 0.08),
@@ -58,7 +62,7 @@ class SignInScreen extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: mediaQuery.screenWidth * 0.08),
-                child: CustomTextField(hintText: "Password")),
+                child: CustomTextField(hintText: "Password",obscureText: true,)),
             SizedBox(
               height: mediaQuery.screenHeight * 0.05,
             ),
@@ -90,33 +94,29 @@ class SignInScreen extends StatelessWidget {
             SizedBox(
               height: mediaQuery.screenHeight * 0.05,
             ),
-
-               CustomButton1(
-                  color: UIColor.blackDefault,
-                  textColor: UIColor.whiteDefault,
-                  width: mediaQuery.screenWidth*0.85,
-                  height: mediaQuery.screenHeight*0.08,
-                  borderWidth: 1.0,
-                  borderColor: UIColor.whiteDefault,
-                  text: 'Continue with Apple',
-                  onPressed: () {},
-                    logo: "assets/images/apple.png"
-
-            ),
+            CustomButton1(
+                color: UIColor.blackDefault,
+                textColor: UIColor.whiteDefault,
+                width: mediaQuery.screenWidth * 0.85,
+                height: mediaQuery.screenHeight * 0.08,
+                borderWidth: 1.0,
+                borderColor: UIColor.whiteDefault,
+                text: 'Continue with Apple',
+                onPressed: () {},
+                logo: "assets/images/apple.png"),
             SizedBox(
               height: mediaQuery.screenHeight * 0.02,
             ),
             CustomButton1(
-                  color: UIColor.whiteDefault,
-                  textColor: UIColor.blackDefault,
-                width: mediaQuery.screenWidth*0.85,
-                height: mediaQuery.screenHeight*0.08,
-                  borderWidth: 1.0,
-                  borderColor: UIColor.blackDefault,
-                  text: 'Continue with Google',
-                  onPressed: () {},
-                  logo: "assets/images/google.png"
-                )
+                color: UIColor.whiteDefault,
+                textColor: UIColor.blackDefault,
+                width: mediaQuery.screenWidth * 0.85,
+                height: mediaQuery.screenHeight * 0.08,
+                borderWidth: 1.0,
+                borderColor: UIColor.blackDefault,
+                text: 'Continue with Google',
+                onPressed: () {},
+                logo: "assets/images/google.png")
           ],
         ),
       ),
