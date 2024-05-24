@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackon/constants/device_mode_constants.dart';
+import 'package:hackon/themes.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
@@ -31,7 +32,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: hintStyle ?? TextStyle(color: darkMode ? Colors.white : Colors.black),
+        hintStyle: hintStyle ?? AppThemes.bodyMedium(color: darkMode ? Colors.white70 : Colors.black54),
         enabledBorder: OutlineInputBorder(
           borderSide: enabledBorderSide ?? BorderSide(color: darkMode ? Colors.white : Colors.black),
           borderRadius: borderRadius ?? BorderRadius.circular(8.0),

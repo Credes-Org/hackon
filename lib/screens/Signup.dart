@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackon/constants/device_mode_constants.dart';
 import 'package:hackon/widgets/CustomButton1.dart';
+import 'package:hackon/widgets/CustomButton2.dart';
 import 'package:hackon/widgets/CustomTextField.dart';
 
 import '../constants/media_query_constants.dart';
@@ -27,10 +28,10 @@ class SignUpScreen extends StatelessWidget {
             ),
             Center(
               child: Image.asset('assets/images/hackon-logo.png',
-                  width: MediaQuery.of(context).size.width * 0.4),
+                  width: MediaQuery.of(context).size.width * 0.3),
             ),
             SizedBox(
-              height: mediaQuery.screenHeight * 0.05,
+              height: mediaQuery.screenHeight * 0.04,
             ),
             Padding(
                 padding: EdgeInsets.symmetric(
@@ -40,19 +41,18 @@ class SignUpScreen extends StatelessWidget {
                     child: Text("Create Account",
                         style: AppThemes.displayLarge(
                             color: darkMode?UIColor.whiteDefault:UIColor.blackDefault)))),
-            SizedBox(
-              height: mediaQuery.screenHeight * 0.01,
-            ),
+
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: mediaQuery.screenWidth * 0.08),
                 child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text("Begin your Hackon Journey",
-                        style: AppThemes.labelLarge(
-                            color: UIColor.greenNeutral)))),
+                        style: AppThemes.bodyMedium(
+                            color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
+            ),
             SizedBox(
-              height: mediaQuery.screenHeight * 0.02,
+              height: mediaQuery.screenHeight * 0.03,
             ),
             Padding(
                 padding: EdgeInsets.symmetric(
@@ -63,7 +63,21 @@ class SignUpScreen extends StatelessWidget {
             ),
             Padding(
                 padding: EdgeInsets.symmetric(horizontal: mediaQuery.screenWidth * 0.08),
-                child: CustomTextField(hintText: "Password",obscureText: true,)),
+                child: CustomTextField(hintText: "Password",obscureText: true,)
+            ),
+            SizedBox(
+              height: mediaQuery.screenHeight * 0.02,
+            ),
+            CustomButton1(
+                color: darkMode?UIColor.blackDefault:UIColor.greenPrimary,
+                textColor: darkMode?UIColor.greenSecondary:UIColor.whiteDefault,
+                width: mediaQuery.screenWidth * 0.85,
+                height: mediaQuery.screenHeight * 0.08,
+                borderWidth: 2.0,
+                borderColor: darkMode?UIColor.greenSecondary:UIColor.greenPrimary,
+                text: 'Sign Up',
+                onPressed: () {},
+            ),
             SizedBox(
               height: mediaQuery.screenHeight * 0.05,
             ),
@@ -93,31 +107,48 @@ class SignUpScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: mediaQuery.screenHeight * 0.05,
+              height: mediaQuery.screenHeight * 0.04,
             ),
-            CustomButton1(
-                color: UIColor.blackDefault,
-                textColor: UIColor.whiteDefault,
-                width: mediaQuery.screenWidth * 0.85,
-                height: mediaQuery.screenHeight * 0.08,
-                borderWidth: 1.0,
-                borderColor: UIColor.whiteDefault,
-                text: 'Continue with Apple',
-                onPressed: () {},
-                logo: "assets/images/apple.png"),
+            Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: mediaQuery.screenWidth * 0.08),
+                child: Align(
+                    alignment: Alignment.center,
+                    child: Text("Continue with", style: AppThemes.bodyMedium(color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
+            ),
             SizedBox(
-              height: mediaQuery.screenHeight * 0.02,
+              height: mediaQuery.screenHeight * 0.04,
             ),
-            CustomButton1(
-                color: UIColor.whiteDefault,
-                textColor: UIColor.blackDefault,
-                width: mediaQuery.screenWidth * 0.85,
-                height: mediaQuery.screenHeight * 0.08,
-                borderWidth: 1.0,
-                borderColor: UIColor.blackDefault,
-                text: 'Continue with Google',
-                onPressed: () {},
-                logo: "assets/images/google.png")
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomButton2(
+                  color: UIColor.blackDefault,
+                  iconSize: mediaQuery.screenWidth * 0.16,
+                  assetPath: 'assets/images/apple.png',
+                  borderWidth: 1.0,
+                  borderColor: darkMode?UIColor.whiteDefault:UIColor.blackDefault,
+                  onPressed: () {
+                    print('Custom Icon Button Pressed');
+                  },
+                ),
+                SizedBox(
+                  width: mediaQuery.screenWidth * 0.05,
+                ),
+                CustomButton2(
+                  color: UIColor.whiteDefault,
+                  iconSize: mediaQuery.screenWidth * 0.16,
+                  assetPath: 'assets/images/google.png',
+                  borderWidth: 1.0,
+                  borderColor: darkMode?UIColor.whiteDefault:UIColor.blackDefault,
+                  onPressed: () {
+                    print('Custom Icon Button Pressed');
+                  },
+                ),
+
+              ],
+            )
+
 
           ],
         ),

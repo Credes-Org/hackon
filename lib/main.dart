@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark
         ),
         routes: {},
-        home: const SignUpScreen()
+        home: const SignInScreen()
     );
   }
 }
