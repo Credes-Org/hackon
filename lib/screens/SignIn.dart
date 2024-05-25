@@ -20,15 +20,30 @@ class SignInScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+
             SizedBox(
-              height: mediaQuery.screenHeight * 0.05,
+              height: mediaQuery.screenHeight * 0.02,
+            ),
+
+            Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: mediaQuery.screenWidth * 0.08),
+                child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text("> REGISTER",
+                        style: AppThemes.bodyMedium(
+                            color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
+            ),
+
+            SizedBox(
+              height: mediaQuery.screenHeight * 0.02,
             ),
             Center(
               child: Image.asset('assets/images/hackon-logo.png',
-                  width: MediaQuery.of(context).size.width * 0.4),
+                  width: MediaQuery.of(context).size.width * 0.3),
             ),
             SizedBox(
-              height: mediaQuery.screenHeight * 0.05,
+              height: mediaQuery.screenHeight * 0.02,
             ),
             Padding(
                 padding: EdgeInsets.symmetric(
@@ -37,18 +52,18 @@ class SignInScreen extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Text("Welcome Back",
                         style: AppThemes.displayLarge(
-                            color: darkMode?UIColor.whiteDefault:UIColor.blackDefault)))),
-            SizedBox(
-              height: mediaQuery.screenHeight * 0.01,
+                            color: darkMode?UIColor.whiteDefault:UIColor.blackDefault)))
             ),
+
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: mediaQuery.screenWidth * 0.08),
                 child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text("Login to Continue",
-                        style: AppThemes.labelLarge(
-                            color: UIColor.greenNeutral)))),
+                        style: AppThemes.bodyMedium(
+                            color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
+            ),
             SizedBox(
               height: mediaQuery.screenHeight * 0.02,
             ),
@@ -62,9 +77,35 @@ class SignInScreen extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: mediaQuery.screenWidth * 0.08),
-                child: CustomTextField(hintText: "Password",obscureText: true,)),
+                child: CustomTextField(hintText: "Password",obscureText: true,)
+            ),
             SizedBox(
-              height: mediaQuery.screenHeight * 0.05,
+              height: mediaQuery.screenHeight * 0.01,
+            ),
+            Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: mediaQuery.screenWidth * 0.08),
+                child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text("Forget Password ?",
+                        style: AppThemes.bodySmall(
+                            color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
+            ),
+            SizedBox(
+              height: mediaQuery.screenHeight * 0.02,
+            ),
+            CustomButton1(
+              color: darkMode?UIColor.greenSecondary:UIColor.greenPrimary,
+              textColor: darkMode?UIColor.blackDefault:UIColor.whiteDefault,
+              width: mediaQuery.screenWidth * 0.85,
+              height: mediaQuery.screenHeight * 0.08,
+              borderWidth: 1.0,
+              borderColor: darkMode?UIColor.greenSecondary:UIColor.greenPrimary,
+              text: 'Sign In',
+              onPressed: () {},
+            ),
+            SizedBox(
+              height: mediaQuery.screenHeight * 0.03,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -92,7 +133,7 @@ class SignInScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: mediaQuery.screenHeight * 0.05,
+              height: mediaQuery.screenHeight * 0.03,
             ),
             CustomButton1(
                 color: UIColor.blackDefault,

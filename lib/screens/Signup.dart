@@ -24,7 +24,21 @@ class SignUpScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              height: mediaQuery.screenHeight * 0.05,
+              height: mediaQuery.screenHeight * 0.02,
+            ),
+
+            Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: mediaQuery.screenWidth * 0.08),
+                child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text("> LOGIN",
+                        style: AppThemes.bodyMedium(
+                            color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
+            ),
+
+            SizedBox(
+              height: mediaQuery.screenHeight * 0.02,
             ),
             Center(
               child: Image.asset('assets/images/hackon-logo.png',
@@ -69,11 +83,11 @@ class SignUpScreen extends StatelessWidget {
               height: mediaQuery.screenHeight * 0.02,
             ),
             CustomButton1(
-                color: darkMode?UIColor.blackDefault:UIColor.greenPrimary,
-                textColor: darkMode?UIColor.greenSecondary:UIColor.whiteDefault,
+                color: darkMode?UIColor.greenSecondary:UIColor.greenPrimary,
+                textColor: darkMode?UIColor.blackDefault:UIColor.whiteDefault,
                 width: mediaQuery.screenWidth * 0.85,
                 height: mediaQuery.screenHeight * 0.08,
-                borderWidth: 2.0,
+                borderWidth: 1.0,
                 borderColor: darkMode?UIColor.greenSecondary:UIColor.greenPrimary,
                 text: 'Sign Up',
                 onPressed: () {},
