@@ -30,9 +30,16 @@ class SignInScreen extends StatelessWidget {
                     horizontal: mediaQuery.screenWidth * 0.08),
                 child: Align(
                     alignment: Alignment.centerRight,
-                    child: Text("> REGISTER",
-                        style: AppThemes.bodyMedium(
-                            color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.pushReplacementNamed(context,'/register');
+                      },
+                      hoverColor: UIColor.yellowPrimary,
+                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                      child: Text("> REGISTER",
+                          style: AppThemes.bodyMedium(
+                              color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)),
+                    ))
             ),
 
             SizedBox(

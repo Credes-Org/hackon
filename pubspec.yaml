@@ -11,9 +11,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
   cupertino_icons: ^1.0.6
+  firebase_core: ^2.31.1
+  firebase_auth: ^4.19.6
+  google_sign_in: ^6.2.1
+  flutter_spinkit: ^5.2.1
+
 
 dev_dependencies:
   flutter_test:

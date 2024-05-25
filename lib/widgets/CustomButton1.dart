@@ -38,7 +38,7 @@ class CustomButton1 extends StatelessWidget {
     bool darkMode = DeviceMode.isDarkMode();
 
 
-    return GestureDetector(
+    return InkWell(
       onTap: onPressed,
       child: Container(
         width: width,

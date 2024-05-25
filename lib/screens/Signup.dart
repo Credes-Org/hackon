@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackon/constants/device_mode_constants.dart';
+import 'package:hackon/services/auth_service.dart';
 import 'package:hackon/widgets/CustomButton1.dart';
 import 'package:hackon/widgets/CustomButton2.dart';
 import 'package:hackon/widgets/CustomTextField.dart';
@@ -32,9 +33,16 @@ class SignUpScreen extends StatelessWidget {
                     horizontal: mediaQuery.screenWidth * 0.08),
                 child: Align(
                     alignment: Alignment.centerRight,
-                    child: Text("> LOGIN",
-                        style: AppThemes.bodyMedium(
-                            color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.pushReplacementNamed(context,'/login');
+                      },
+                      hoverColor: UIColor.yellowPrimary,
+                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                      child: Text("> LOGIN",
+                          style: AppThemes.bodyMedium(
+                              color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)),
+                    ))
             ),
 
             SizedBox(
@@ -156,7 +164,7 @@ class SignUpScreen extends StatelessWidget {
                   borderWidth: 1.0,
                   borderColor: darkMode?UIColor.whiteDefault:UIColor.blackDefault,
                   onPressed: () {
-                    print('Custom Icon Button Pressed');
+                    GoogleAuthService().signInWithGoogle();
                   },
                 ),
 
