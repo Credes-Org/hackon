@@ -1,0 +1,1 @@
+ C:\\Users\\credes\\Documents\\projects\\hackon\\.dart_tool\\flutter_build\\b9224f1c7c8c39f9a569aac3ab485522\\native_assets.yaml: 
