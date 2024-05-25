@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "88987154558",
+    "project_id": "hackon-credes",
+    "storage_bucket": "hackon-credes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88987154558:android:a742c65c0b6120d70f802f",
+        "android_client_info": {
+          "package_name": "com.credes.hackon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBPS1q5FWriudRpnvSfhaWiOWNsRDUyqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88987154558:android:fdf1c29ba6ffa7050f802f",
+        "android_client_info": {
+          "package_name": "com.example.hackon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBPS1q5FWriudRpnvSfhaWiOWNsRDUyqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
