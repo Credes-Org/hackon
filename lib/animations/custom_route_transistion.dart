@@ -1,5 +1,7 @@
+import 'package:bart/bart.dart';
 import 'package:flutter/material.dart';
 import 'package:hackon/screens/Home.dart';
+import 'package:hackon/screens/MainScreen/MainScreen.dart';
 import 'package:hackon/screens/SignIn.dart';
 import 'package:hackon/screens/Signup.dart';
 import 'package:hackon/screens/Welcome.dart';
@@ -34,6 +36,7 @@ class CustomPageRoute extends PageRouteBuilder {
 }
 
 
+
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case '/':
@@ -54,10 +57,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         startOffset: Offset(1.0, 0.0), // Slide in from the left
         duration: Duration(seconds: 1),
       );
-    case '/homepage':
+    case '/main':
       return CustomPageRoute(
-        page: HomeScreen(),
-        startOffset: Offset(0.0, -1.0), // Slide down from the top
+        page: MainScreen(),
+        startOffset: Offset(0.0, 1.0), // Slide down from the top
         duration: Duration(seconds: 1),
       );
     default:

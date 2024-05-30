@@ -109,7 +109,9 @@ class SignInScreen extends StatelessWidget {
               borderWidth: 1.0,
               borderColor: darkMode?UIColor.greenSecondary:UIColor.greenPrimary,
               text: 'Sign In',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context,'/main');
+              },
             ),
             SizedBox(
               height: mediaQuery.screenHeight * 0.03,
