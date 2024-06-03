@@ -15,33 +15,31 @@ class SignInScreen extends StatelessWidget {
     bool darkMode = DeviceMode.isDarkMode();
 
     return Scaffold(
-      resizeToAvoidBottomInset : false,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-
             SizedBox(
               height: mediaQuery.screenHeight * 0.02,
             ),
-
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: mediaQuery.screenWidth * 0.08),
                 child: Align(
                     alignment: Alignment.centerRight,
                     child: InkWell(
-                      onTap: (){
-                        Navigator.pushReplacementNamed(context,'/register');
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/register');
                       },
                       hoverColor: UIColor.yellowPrimary,
                       borderRadius: BorderRadius.all(Radius.circular(6.0)),
                       child: Text("> REGISTER",
                           style: AppThemes.bodyMedium(
-                              color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)),
-                    ))
-            ),
-
+                              color: darkMode
+                                  ? UIColor.greenNeutral
+                                  : UIColor.greenPrimary)),
+                    ))),
             SizedBox(
               height: mediaQuery.screenHeight * 0.02,
             ),
@@ -53,15 +51,19 @@ class SignInScreen extends StatelessWidget {
               height: mediaQuery.screenHeight * 0.02,
             ),
             Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: mediaQuery.screenWidth * 0.08),
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text("Welcome Back",
-                        style: AppThemes.displayLarge(
-                            color: darkMode?UIColor.whiteDefault:UIColor.blackDefault)))
+              padding: EdgeInsets.symmetric(
+                  horizontal: mediaQuery.screenWidth * 0.08),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Welcome Back",
+                  style: AppThemes.displayLarge(
+                    color:
+                        darkMode ? UIColor.whiteDefault : UIColor.blackDefault,
+                  ),
+                ),
+              ),
             ),
-
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: mediaQuery.screenWidth * 0.08),
@@ -69,8 +71,9 @@ class SignInScreen extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Text("Login to Continue",
                         style: AppThemes.bodyMedium(
-                            color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
-            ),
+                            color: darkMode
+                                ? UIColor.greenNeutral
+                                : UIColor.greenPrimary)))),
             SizedBox(
               height: mediaQuery.screenHeight * 0.02,
             ),
@@ -84,8 +87,10 @@ class SignInScreen extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: mediaQuery.screenWidth * 0.08),
-                child: CustomTextField(hintText: "Password",obscureText: true,)
-            ),
+                child: CustomTextField(
+                  hintText: "Password",
+                  obscureText: true,
+                )),
             SizedBox(
               height: mediaQuery.screenHeight * 0.01,
             ),
@@ -96,21 +101,23 @@ class SignInScreen extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: Text("Forget Password ?",
                         style: AppThemes.bodySmall(
-                            color: darkMode?UIColor.greenNeutral:UIColor.greenPrimary)))
-            ),
+                            color: darkMode
+                                ? UIColor.greenNeutral
+                                : UIColor.greenPrimary)))),
             SizedBox(
               height: mediaQuery.screenHeight * 0.02,
             ),
             CustomButton1(
-              color: darkMode?UIColor.greenSecondary:UIColor.greenPrimary,
-              textColor: darkMode?UIColor.blackDefault:UIColor.whiteDefault,
+              color: darkMode ? UIColor.greenSecondary : UIColor.greenPrimary,
+              textColor: darkMode ? UIColor.blackDefault : UIColor.whiteDefault,
               width: mediaQuery.screenWidth * 0.85,
               height: mediaQuery.screenHeight * 0.08,
               borderWidth: 1.0,
-              borderColor: darkMode?UIColor.greenSecondary:UIColor.greenPrimary,
+              borderColor:
+                  darkMode ? UIColor.greenSecondary : UIColor.greenPrimary,
               text: 'Sign In',
               onPressed: () {
-                Navigator.pushReplacementNamed(context,'/main');
+                Navigator.pushReplacementNamed(context, '/main');
               },
             ),
             SizedBox(
